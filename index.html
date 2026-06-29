@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Food Tracking Guide | Myths, Mistakes & Practical Caveats</title>
+<meta name="description" content="Food tracking, honestly: why precision is a myth, the few execution mistakes that actually matter (raw vs. cooked, eyeballing, the little stuff, weekend blowouts), and how to track in a way you'll actually keep. Evidence-based. No filler.">
+<meta property="og:title" content="Food Tracking Guide | Myths, Mistakes & Practical Caveats">
+<meta property="og:description" content="Tracking works because it builds awareness, not because it's precise. Fix the few things that matter and stop obsessing over the rest.">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://brusovcoach.org/food-tracking">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Food Tracking Guide",
+  "description": "Food tracking myths, mistakes, and practical caveats every client should know.",
+  "url": "https://brusovcoach.org/food-tracking"
+}
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f5f0e8;
+    --bg2: #ede8df;
+    --bg3: #e4ddd3;
+    --bg4: #dbd3c8;
+    --border: #cfc8bc;
+    --border-light: #bfb8aa;
+    --text: #1a1714;
+    --text-secondary: #4a4540;
+    --muted: #5a524a;
+    --accent: #d4500a;
+    --accent-bright: #e8601a;
+    --accent-dim: rgba(212,80,10,0.12);
+    --accent2: #f09060;
+    --beginner: #1fa855;
+    --intermediate: #d4920a;
+    --advanced: #d43030;
+    --sidebar-w: 268px;
+    --font-display: 'Barlow Condensed', sans-serif;
+    --font-body: 'DM Sans', sans-serif;
+    --radius: 6px;
+    --radius-lg: 10px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font-body);
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.72;
+    font-size: 15px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── SCROLL PROGRESS ── */
+  .sidebar-progress {
+    position: fixed; top: 0; left: 0;
+    width: 3px; height: 0%;
+    background: var(--accent); z-index: 500;
+    transition: height 0.08s linear;
+  }
+
+  /* ── SIDEBAR ── */
+  .sidebar {
+    position: fixed; top: 0; left: 0;
+    width: var(--sidebar-w); height: 100vh;
+    background: var(--bg2); border-right: 1px solid var(--border);
+    overflow-y: auto; z-index: 100;
+    display: flex; flex-direction: column;
+  }
+  .sidebar-back-bar { padding: 9px 22px; border-bottom: 1px solid var(--border); flex-shrink: 0; }
+  .sidebar-back-bar a {
+    font-family: var(--font-display); font-size: 10px; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase; color: var(--muted);
+    text-decoration: none; display: flex; align-items: center; gap: 6px; transition: color 0.12s;
+  }
+  .sidebar-back-bar a::before { content: '←'; }
+  .sidebar-back-bar a:hover { color: var(--accent); }
+
+  .sidebar-logo { padding: 28px 22px 22px; border-bottom: 1px solid var(--border); flex-shrink: 0; }
+  .sidebar-logo-eyebrow {
+    font-family: var(--font-display); font-size: 10px; font-weight: 700;
+    letter-spacing: 3px; text-transform: uppercase; color: var(--accent);
+    margin-bottom: 6px; display: block;
+  }
+  .sidebar-logo h1 {
+    font-family: var(--font-display); font-size: 20px; font-weight: 800;
+    color: var(--text); line-height: 1.1; letter-spacing: 0.5px; text-transform: uppercase;
+  }
+  .sidebar-logo p { font-size: 11px; color: var(--muted); margin-top: 5px; letter-spacing: 0.3px; }
+
+  .sidebar nav { padding: 10px 0 20px; flex: 1; overflow-y: auto; }
+  .nav-section-label {
+    font-family: var(--font-display); font-size: 9px; font-weight: 700;
+    letter-spacing: 2.5px; text-transform: uppercase; color: var(--muted);
+    padding: 18px 22px 6px;
+  }
+  .sidebar a {
+    display: flex; align-items: center; gap: 10px; padding: 7px 22px;
+    font-size: 13px; font-weight: 400; color: var(--text-secondary);
+    text-decoration: none; transition: all 0.12s;
+    border-left: 2px solid transparent; letter-spacing: 0.1px;
+  }
+  .sidebar a:hover { color: var(--text); background: rgba(0,0,0,0.05); border-left-color: var(--border-light); }
+  .sidebar a.active { color: var(--text); background: rgba(212,80,10,0.08); border-left-color: var(--accent); font-weight: 500; }
+  .sidebar a .icon { font-size: 13px; width: 18px; text-align: center; flex-shrink: 0; }
+
+  .sidebar-hub-section { padding: 8px 14px 20px; border-top: 1px solid var(--border); margin-top: auto; flex-shrink: 0; }
+  .sidebar-hub-section .nav-section-label { padding-left: 8px; padding-top: 12px; }
+  .sidebar-hub-card {
+    display: flex; align-items: center; gap: 10px; padding: 11px 12px;
+    text-decoration: none; background: var(--bg3); border: 1px solid var(--border-light);
+    border-radius: var(--radius); transition: all 0.15s; margin-top: 6px;
+  }
+  .sidebar-hub-card:hover { background: var(--bg4); border-color: var(--accent); }
+  .sidebar-hub-card .hub-icon { font-size: 18px; flex-shrink: 0; }
+  .sidebar-hub-card .hub-label {
+    font-family: var(--font-display); font-size: 9px; font-weight: 700;
+    letter-spacing: 1.5px; text-transform: uppercase; color: var(--accent);
+    display: block; margin-bottom: 1px;
+  }
+  .sidebar-hub-card .hub-name { font-size: 13px; font-weight: 500; color: var(--text); display: block; }
+
+  /* ── MAIN ── */
+  .main { margin-left: var(--sidebar-w); min-height: 100vh; }
+
+  /* ── HERO ── */
+  .hero { background: var(--bg2); border-bottom: 1px solid var(--border); padding: 72px 64px 60px; position: relative; overflow: hidden; }
+  .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--accent); }
+  .hero::after {
+    content: ''; position: absolute; top: -120px; right: -80px;
+    width: 500px; height: 500px;
+    background: radial-gradient(ellipse at center, rgba(212,80,10,0.07) 0%, transparent 65%);
+    pointer-events: none;
+  }
+  .hero-eyebrow {
+    font-family: var(--font-display); font-size: 11px; font-weight: 700;
+    letter-spacing: 3.5px; text-transform: uppercase; color: var(--accent);
+    margin-bottom: 20px; display: flex; align-items: center; gap: 10px;
+  }
+  .hero-eyebrow::before { content: ''; display: inline-block; width: 24px; height: 2px; background: var(--accent); flex-shrink: 0; }
+  .hero h1 {
+    font-family: var(--font-display); font-size: 52px; font-weight: 900;
+    color: var(--text); line-height: 1.0; max-width: 720px; margin-bottom: 20px;
+    letter-spacing: 0.5px; text-transform: uppercase;
+  }
+  .hero-desc { font-size: 16px; color: var(--text-secondary); max-width: 600px; margin-bottom: 32px; line-height: 1.65; font-weight: 300; }
+  .hero-badges { display: flex; gap: 8px; flex-wrap: wrap; }
+  .badge {
+    display: inline-flex; align-items: center; gap: 6px; padding: 4px 12px;
+    border-radius: 3px; font-family: var(--font-display); font-size: 11px;
+    font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
+  }
+  .badge-beginner { background: rgba(31,168,85,0.12); color: var(--beginner); border: 1px solid rgba(31,168,85,0.25); }
+  .badge-intermediate { background: rgba(212,146,10,0.12); color: var(--intermediate); border: 1px solid rgba(212,146,10,0.25); }
+  .badge-advanced { background: rgba(212,48,48,0.12); color: var(--advanced); border: 1px solid rgba(212,48,48,0.25); }
+
+  /* ── FILTER BAR ── */
+  .filter-bar {
+    position: sticky; top: 0; background: var(--bg2);
+    border-bottom: 1px solid var(--border); padding: 10px 64px; z-index: 50;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .filter-label {
+    font-family: var(--font-display); font-size: 10px; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase; color: var(--muted); flex-shrink: 0;
+  }
+  .search-wrap { position: relative; }
+  .search-wrap input {
+    background: var(--bg3); border: 1px solid var(--border); border-radius: 3px;
+    padding: 5px 14px 5px 32px; font-size: 12px; font-family: var(--font-body);
+    color: var(--text); outline: none; width: 200px; transition: border-color 0.12s, width 0.2s;
+  }
+  .search-wrap input:focus { border-color: var(--accent); width: 240px; }
+  .search-wrap input::placeholder { color: var(--muted); }
+  .search-icon { position: absolute; left: 10px; top: 50%; transform: translateY(-50%); color: var(--muted); font-size: 12px; pointer-events: none; }
+
+  /* ── CONTENT ── */
+  .content { padding: 0 64px 100px; }
+
+  .section { padding: 60px 0 52px; border-bottom: 1px solid var(--border); }
+  .section:last-child { border-bottom: none; }
+  .section.hidden { display: none; }
+
+  .section-header { display: flex; align-items: flex-start; gap: 20px; margin-bottom: 36px; }
+  .section-icon {
+    width: 44px; height: 44px; border-radius: var(--radius);
+    background: var(--accent-dim); border: 1px solid rgba(212,80,10,0.2);
+    display: flex; align-items: center; justify-content: center; font-size: 20px;
+    flex-shrink: 0; margin-top: 3px;
+  }
+  .section-meta { flex: 1; }
+  .section-eyebrow {
+    font-family: var(--font-display); font-size: 10px; font-weight: 700;
+    letter-spacing: 3px; text-transform: uppercase; color: var(--accent);
+    margin-bottom: 6px; display: block;
+  }
+  .section-header h2 {
+    font-family: var(--font-display); font-size: 32px; font-weight: 800;
+    color: var(--text); line-height: 1.1; letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 0;
+  }
+  .section-header-sub { display: flex; align-items: center; gap: 14px; margin-top: 6px; flex-wrap: wrap; }
+  .section-header p { font-size: 13px; color: var(--muted); font-weight: 300; }
+  .read-time {
+    font-family: var(--font-display); font-size: 10px; font-weight: 700;
+    letter-spacing: 1.5px; text-transform: uppercase; color: var(--accent);
+    background: var(--accent-dim); padding: 2px 8px; border-radius: 2px;
+    white-space: nowrap; border: 1px solid rgba(212,80,10,0.15);
+  }
+
+  /* ── PROSE ── */
+  .prose p { font-size: 14px; color: var(--text-secondary); line-height: 1.78; margin-bottom: 14px; font-weight: 300; }
+  .prose p:last-child { margin-bottom: 0; }
+  .prose strong { color: var(--text); font-weight: 600; }
+  .prose em { color: var(--text); font-style: italic; }
+
+  /* ── PHILOSOPHY ── */
+  .philosophy {
+    background: var(--bg3); border: 1px solid var(--border); border-left: 3px solid var(--accent);
+    border-radius: 0 var(--radius-lg) var(--radius-lg) 0; padding: 36px 40px;
+  }
+  .philosophy-label {
+    font-family: var(--font-display); font-size: 10px; font-weight: 700;
+    letter-spacing: 3px; text-transform: uppercase; color: var(--accent);
+    margin-bottom: 14px; display: block;
+  }
+  .philosophy h2 {
+    font-family: var(--font-display); font-size: 26px; font-weight: 800;
+    color: var(--text); line-height: 1.2; letter-spacing: 0.3px; margin-bottom: 18px; text-transform: uppercase;
+  }
+  .philosophy p { font-size: 14px; color: var(--text-secondary); line-height: 1.78; margin-bottom: 12px; font-weight: 300; }
+  .philosophy p:last-child { margin-bottom: 0; }
+
+  /* ── h3 SUBHEADING ── */
+  h3 {
+    font-family: var(--font-display); font-size: 18px; font-weight: 700;
+    letter-spacing: 0.5px; text-transform: uppercase; color: var(--text);
+    margin: 32px 0 14px; display: flex; align-items: center; gap: 10px;
+  }
+  h3::before { content: ''; display: inline-block; width: 18px; height: 2px; background: var(--accent); flex-shrink: 0; }
+  h3:first-child { margin-top: 0; }
+
+  /* ── CALLOUT ── */
+  .callout {
+    background: rgba(212,80,10,0.05); border: 1px solid rgba(212,80,10,0.18); border-left: 3px solid var(--accent);
+    border-radius: 0 var(--radius) var(--radius) 0; padding: 18px 22px; margin: 24px 0;
+    font-size: 14px; color: var(--text-secondary); font-style: italic; line-height: 1.75; font-weight: 300;
+  }
+  .callout strong { color: var(--accent2); font-style: normal; font-weight: 500; }
+
+  /* ── WARNING (red) ── */
+  .warning {
+    background: rgba(212,48,48,0.05); border: 1px solid rgba(212,48,48,0.2); border-left: 3px solid var(--advanced);
+    border-radius: 0 var(--radius-lg) var(--radius-lg) 0; padding: 24px 28px; margin: 28px 0;
+  }
+  .warning-label {
+    font-family: var(--font-display); font-size: 10px; font-weight: 700;
+    letter-spacing: 2.5px; text-transform: uppercase; color: var(--advanced);
+    display: block; margin-bottom: 14px;
+  }
+  .warning p { font-size: 14px; color: var(--text-secondary); line-height: 1.78; margin-bottom: 12px; font-weight: 300; }
+  .warning p:last-child { margin-bottom: 0; }
+  .warning strong { color: var(--text); font-weight: 600; }
+  .warning ul { padding-left: 18px; margin: 4px 0 14px; }
+  .warning li { font-size: 14px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 6px; font-weight: 300; }
+
+  /* ── NUMBERS GRID ── */
+  .numbers-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px; margin: 28px 0; }
+  .number-card {
+    background: var(--bg3); border: 1px solid var(--border); border-radius: var(--radius-lg);
+    padding: 20px 16px; text-align: center; border-top: 2px solid var(--accent);
+  }
+  .number-card .num { font-family: var(--font-display); font-size: 30px; font-weight: 900; color: var(--accent); line-height: 1; margin-bottom: 8px; letter-spacing: -0.5px; }
+  .number-card .num-label { font-size: 11px; color: var(--muted); line-height: 1.35; font-weight: 300; }
+
+  /* ── HIGHLIGHT BOX ── */
+  .highlight { background: var(--bg3); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 20px 24px; margin: 20px 0; }
+  .highlight h4 {
+    font-family: var(--font-display); font-size: 13px; font-weight: 700;
+    letter-spacing: 0.5px; text-transform: uppercase; color: var(--text);
+    margin-bottom: 12px; padding-bottom: 10px; border-bottom: 1px solid var(--border);
+  }
+  .highlight p { font-size: 13px; color: var(--text-secondary); line-height: 1.72; font-weight: 300; }
+  .highlight ul, .highlight ol { padding-left: 18px; margin-top: 4px; }
+  .highlight li { font-size: 13px; color: var(--text-secondary); line-height: 1.68; font-weight: 300; margin-bottom: 6px; }
+  .highlight li strong, .highlight p strong { color: var(--text); font-weight: 500; }
+
+  /* ── STEPS ── */
+  .steps { margin: 20px 0; }
+  .step { display: flex; gap: 18px; padding: 18px 0; border-bottom: 1px solid var(--border); }
+  .step:last-child { border-bottom: none; }
+  .step-num {
+    width: 30px; height: 30px; border-radius: 3px; background: var(--accent-dim);
+    border: 1px solid rgba(212,80,10,0.3); color: var(--accent);
+    font-family: var(--font-display); font-size: 14px; font-weight: 800;
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;
+  }
+  .step-body h4 { font-family: var(--font-display); font-size: 14px; font-weight: 700; letter-spacing: 0.3px; text-transform: uppercase; color: var(--text); margin-bottom: 5px; }
+  .step-body p { font-size: 13px; color: var(--text-secondary); line-height: 1.65; font-weight: 300; }
+  .step-body p strong { color: var(--text); font-weight: 500; }
+
+  /* ── MISTAKE LIST ── */
+  .mistakes { margin: 16px 0; }
+  .mistake { display: flex; gap: 14px; padding: 16px 0; border-bottom: 1px solid var(--border); font-size: 13px; color: var(--text-secondary); font-weight: 300; line-height: 1.65; }
+  .mistake:last-child { border-bottom: none; }
+  .mistake-num { color: var(--advanced); font-family: var(--font-display); font-weight: 800; font-size: 14px; flex-shrink: 0; width: 26px; margin-top: 1px; }
+  .mistake strong { color: var(--text); display: block; margin-bottom: 4px; font-size: 13px; font-weight: 500; font-family: var(--font-display); letter-spacing: 0.3px; text-transform: uppercase; }
+
+  /* ── COMPARISON ── */
+  .compare { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 20px 0; }
+  .compare-box { background: var(--bg3); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 20px; }
+  .compare-box h4 { font-family: var(--font-display); font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--text); margin-bottom: 12px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
+  .compare-box ul { padding-left: 16px; }
+  .compare-box li { font-size: 13px; color: var(--text-secondary); margin-bottom: 6px; line-height: 1.5; font-weight: 300; }
+  .compare-box li strong { color: var(--text); font-weight: 500; }
+
+  /* ── CTA BLOCK ── */
+  .cta-block {
+    background: var(--bg3); border: 1px solid rgba(212,80,10,0.25); border-top: 3px solid var(--accent);
+    border-radius: 0 0 var(--radius-lg) var(--radius-lg); padding: 48px 52px; margin: 60px 0 0;
+    display: flex; align-items: center; justify-content: space-between; gap: 40px; position: relative; overflow: hidden;
+  }
+  .cta-block::before { content: ''; position: absolute; top: -60px; right: -40px; width: 300px; height: 300px; background: radial-gradient(ellipse, rgba(212,80,10,0.06) 0%, transparent 70%); pointer-events: none; }
+  .cta-block-text h2 { font-family: var(--font-display); font-size: 34px; font-weight: 900; color: var(--text); letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 12px; }
+  .cta-block-text p { font-size: 14px; color: var(--text-secondary); max-width: 480px; line-height: 1.7; font-weight: 300; }
+  .cta-btn {
+    display: inline-block; background: var(--accent); color: #fff;
+    font-family: var(--font-display); font-size: 13px; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase; padding: 14px 28px;
+    border-radius: var(--radius); text-decoration: none; white-space: nowrap;
+    transition: background 0.12s, transform 0.1s; flex-shrink: 0; border: 1px solid transparent;
+  }
+  .cta-btn:hover { background: var(--accent-bright); transform: translateY(-1px); }
+
+  /* ── MOBILE HEADER ── */
+  .mobile-header { display: none; position: sticky; top: 0; background: var(--bg2); border-bottom: 1px solid var(--border); padding: 14px 20px; z-index: 200; align-items: center; justify-content: space-between; }
+  .mobile-logo { font-family: var(--font-display); font-size: 16px; font-weight: 800; color: var(--text); text-transform: uppercase; letter-spacing: 1px; }
+  .menu-toggle { background: none; border: none; color: var(--text); font-size: 20px; cursor: pointer; }
+  .mobile-back-btn { font-family: var(--font-display); font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--accent); text-decoration: none; padding: 7px 13px; border: 1px solid var(--accent); border-radius: 4px; white-space: nowrap; flex-shrink: 0; }
+
+  /* ── MOBILE MENU ── */
+  .mobile-menu { position: fixed; top: 0; left: 0; bottom: 0; width: 85vw; max-width: 320px; background: var(--bg2); border-right: 1px solid var(--border); z-index: 300; overflow-y: auto; padding: 0 0 40px; transform: translateX(-100%); transition: transform 0.25s ease; }
+  .mobile-menu.open { transform: translateX(0); }
+  .mobile-menu-header { display: flex; align-items: center; justify-content: space-between; padding: 16px 20px; border-bottom: 1px solid var(--border); }
+  .menu-back-link { display: block; padding: 12px 20px; font-size: 14px; font-weight: 400; color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--border); }
+  .menu-back-link:hover { color: var(--accent-bright); background: var(--bg3); }
+  .mobile-menu nav a { display: block; padding: 12px 24px; color: var(--text-secondary); text-decoration: none; border-bottom: 1px solid var(--border); font-size: 14px; font-weight: 300; }
+  .mobile-menu nav a:hover { color: var(--text); background: var(--bg3); }
+  .menu-backdrop { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.55); z-index: 299; }
+  .menu-backdrop.open { display: block; }
+
+  /* ── FOOTER ── */
+  footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 36px 64px; margin-left: var(--sidebar-w); }
+  .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+  .footer-brand h3 { font-family: var(--font-display); font-size: 16px; font-weight: 800; color: var(--text); text-transform: uppercase; letter-spacing: 1px; margin: 0 0 5px; }
+  .footer-brand h3::before { display: none; }
+  .footer-brand p { font-size: 12px; color: var(--muted); font-weight: 300; }
+  .footer-links { display: flex; gap: 24px; align-items: center; }
+  .footer-links a { font-size: 12px; font-family: var(--font-display); font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.12s; }
+  .footer-links a:hover { color: var(--accent); }
+  .footer-copy { font-size: 11px; color: var(--muted); font-weight: 300; }
+
+  .sidebar::-webkit-scrollbar { width: 4px; }
+  .sidebar::-webkit-scrollbar-track { background: transparent; }
+  .sidebar::-webkit-scrollbar-thumb { background: var(--border-light); border-radius: 2px; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 960px) {
+    .sidebar { display: none; }
+    .sidebar-progress { display: none; }
+    .main { margin-left: 0; }
+    footer { margin-left: 0; padding: 28px 24px; }
+    .mobile-header { display: flex; }
+    .hero { padding: 40px 24px 36px; }
+    .hero h1 { font-size: 34px; }
+    .filter-bar { padding: 10px 24px; }
+    .content { padding: 0 24px 60px; }
+    .compare { grid-template-columns: 1fr; }
+    .numbers-grid { grid-template-columns: repeat(2, 1fr); }
+    .philosophy { padding: 28px 24px; }
+    .cta-block { flex-direction: column; align-items: flex-start; padding: 36px 28px; gap: 24px; }
+    .cta-block-text h2 { font-size: 26px; }
+    .section-header h2 { font-size: 26px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="sidebar-progress" id="progressBar"></div>
+
+<!-- SIDEBAR -->
+<aside class="sidebar" aria-label="Site navigation">
+  <div class="sidebar-back-bar">
+    <a href="https://brusovcoach.org" target="_blank" rel="noopener noreferrer">brusovcoach.org</a>
+  </div>
+  <div class="sidebar-logo">
+    <span class="sidebar-logo-eyebrow">Knowledge Base</span>
+    <h1>Food Tracking, Honestly</h1>
+    <p>Professional coaching resource</p>
+  </div>
+  <nav aria-label="Main navigation">
+    <div class="nav-section-label">Start Here</div>
+    <a href="#philosophy" class="active"><span class="icon">🎯</span> My Take</a>
+    <a href="#findings"><span class="icon">🔑</span> Key Findings</a>
+
+    <div class="nav-section-label">Understand It</div>
+    <a href="#psychology"><span class="icon">🧠</span> Psychology of Tracking</a>
+    <a href="#concepts"><span class="icon">⚖️</span> Calories &amp; Macros</a>
+
+    <div class="nav-section-label">Get It Right</div>
+    <a href="#execution"><span class="icon">🛠️</span> Execution Mistakes</a>
+    <a href="#plan"><span class="icon">🗺️</span> The Plan</a>
+
+    <div class="nav-section-label">Reference</div>
+    <a href="#numbers"><span class="icon">🔢</span> Key Numbers</a>
+    <a href="#caveats"><span class="icon">⚠️</span> Caveats</a>
+  </nav>
+  <div class="sidebar-hub-section">
+    <div class="nav-section-label">Also Explore</div>
+    <a href="https://hypertrophy.brusovcoach.org" class="sidebar-hub-card" target="_blank" rel="noopener noreferrer">
+      <span class="hub-icon">💪</span>
+      <span>
+        <span class="hub-label">Hypertrophy</span>
+        <span class="hub-name">Training Hub →</span>
+      </span>
+    </a>
+  </div>
+</aside>
+
+<!-- MOBILE HEADER -->
+<div class="mobile-header" role="banner">
+  <a href="https://brusovcoach.org" class="mobile-back-btn">← Main</a>
+  <div class="mobile-logo">Food Tracking</div>
+  <button class="menu-toggle" id="menuToggleBtn" aria-label="Open navigation menu" aria-expanded="false">☰</button>
+</div>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Navigation menu">
+  <div class="mobile-menu-header">
+    <div class="mobile-logo">Food Tracking</div>
+    <button class="menu-toggle" id="menuCloseBtn" aria-label="Close navigation menu">✕</button>
+  </div>
+  <a href="https://brusovcoach.org" class="menu-back-link" target="_blank" rel="noopener noreferrer">← Back to BrusovCoaching</a>
+  <nav>
+    <a href="#philosophy">🎯 My Take</a>
+    <a href="#findings">🔑 Key Findings</a>
+    <a href="#psychology">🧠 Psychology of Tracking</a>
+    <a href="#concepts">⚖️ Calories &amp; Macros</a>
+    <a href="#execution">🛠️ Execution Mistakes</a>
+    <a href="#plan">🗺️ The Plan</a>
+    <a href="#numbers">🔢 Key Numbers</a>
+    <a href="#caveats">⚠️ Caveats</a>
+  </nav>
+</div>
+
+<div class="menu-backdrop" id="menuBackdrop"></div>
+
+<!-- MAIN -->
+<main class="main">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-eyebrow">Professional Coaching Resource</div>
+    <div style="font-family:var(--font-display);font-size:12px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--muted);margin-bottom:10px;">Coach Vladimir Brusov</div>
+    <h1>Food Tracking - Myths, Mistakes &amp; What Actually Matters</h1>
+    <p class="hero-desc">Tracking works because it builds awareness, not because it's precise. Here's how to fix the few things that actually matter - and stop obsessing over the rest.</p>
+    <div class="hero-badges">
+      <span class="badge badge-beginner">🟢 Beginner Friendly</span>
+      <span class="badge badge-intermediate">🟡 Practical</span>
+      <span class="badge badge-advanced">🔴 Evidence-Based</span>
+    </div>
+  </div>
+
+  <!-- FILTER BAR -->
+  <div class="filter-bar" role="search">
+    <span class="filter-label">Search:</span>
+    <div class="search-wrap">
+      <span class="search-icon">🔍</span>
+      <input type="search" id="searchInput" placeholder="Search topics..." aria-label="Search topics">
+    </div>
+  </div>
+
+  <!-- CONTENT -->
+  <div class="content">
+
+    <!-- MY TAKE -->
+    <section class="section" id="philosophy" aria-label="My Take">
+      <div class="section-header">
+        <div class="section-icon">🎯</div>
+        <div class="section-meta">
+          <span class="section-eyebrow">Foundational Framework</span>
+          <h2>My Take</h2>
+          <div class="section-header-sub">
+            <p>Why most people track wrong - and what to do instead</p>
+            <span class="read-time">2 min read</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="philosophy">
+        <div class="philosophy-label">Foundational Framework</div>
+        <h2>Aim for consistently good, not perfect.</h2>
+        <p>Food tracking works because it builds <strong>awareness</strong>, not because it's precise. The numbers in your app are good estimates - not exact measurements - and trying to make them perfect is the fastest way to burn out and quit.</p>
+        <p>In Kaiser Permanente's 2008 trial of 1,685 adults (Hollis et al.), those who kept daily food records lost <strong>twice as much weight</strong> as those who kept none. The point isn't the decimal places - it's the habit. Track to steer, not to grade yourself. And know that it's a tool with an off-ramp, not a life sentence.</p>
+      </div>
+
+      <div class="callout">
+        The biggest <strong>real</strong> errors are practical and fixable: confusing raw vs. cooked weights, eyeballing portions, forgetting bites and oils and drinks, picking the wrong app-database entry, and "weekend blowouts." These dwarf the small stuff people obsess over - like cooking spray or a few calories on a label.
+      </div>
+    </section>
+
+    <!-- KEY FINDINGS -->
+    <section class="section" id="findings" aria-label="Key Findings">
+      <div class="section-header">
+        <div class="section-icon">🔑</div>
+        <div class="section-meta">
+          <span class="section-eyebrow">The Big Picture</span>
+          <h2>Key Findings</h2>
+          <div class="section-header-sub">
+            <p>Five things to internalize before you log a single meal</p>
+            <span class="read-time">3 min read</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-body">
+            <h4>Precision is a myth - and chasing it backfires</h4>
+            <p>Food labels are legally allowed to be off by a wide margin, app databases are crowdsourced and frequently wrong, and even dietitians misjudge meals. Tracking is a steering tool, not a scale-accurate science.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-body">
+            <h4>Psychology matters more than the math</h4>
+            <p>All-or-nothing thinking, food guilt, and the weekday-perfect / weekend-blowout cycle sabotage more results than any measurement error. For some people, tracking can tip into unhealthy obsession.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-body">
+            <h4>A handful of execution mistakes cause most of the damage</h4>
+            <p>Raw vs. cooked weighing, eyeballing portions, forgetting "the little stuff," restaurant meals, and bad database entries are where hundreds of hidden calories hide.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <div class="step-body">
+            <h4>Plateaus are almost never "starvation mode"</h4>
+            <p>Metabolic adaptation is real but small; stalls are nearly always "adherence drift" - a gap between what you think you ate and what you actually ate.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">5</div>
+          <div class="step-body">
+            <h4>Tracking is optional</h4>
+            <p>It's a useful tool for many, but hand portions and habit-based approaches work well for lots of people and are far more sustainable long-term.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PSYCHOLOGY -->
+    <section class="section" id="psychology" aria-label="Psychology of Tracking">
+      <div class="section-header">
+        <div class="section-icon">🧠</div>
+        <div class="section-meta">
+          <span class="section-eyebrow">Part 1</span>
+          <h2>Psychology of Tracking</h2>
+          <div class="section-header-sub">
+            <p>The mental traps that sabotage more results than any measurement error</p>
+            <span class="read-time">6 min read</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="prose">
+        <h3>Why people start - and why they quit</h3>
+        <p>People start tracking for awareness and control: it reveals patterns you genuinely cannot see otherwise. Simply logging food tends to reduce how much people eat, even before they consciously try to cut back. But most people quit, and the reasons are predictable: it feels too time-consuming, socially awkward at restaurants, and mentally exhausting. Detailed calorie tracking reliably declines over time, and people who stop tracking generally stop seeing results - so <em>sustainability</em> is the whole game.</p>
+
+        <h3>All-or-nothing thinking</h3>
+        <p>This is, according to many dietitians, the single most common way clients sabotage themselves. The pattern: you eat one cookie, decide you've "blown it," and eat the whole box - then write off the rest of the day (or week) and plan to "start again Monday." Your body responds to patterns over weeks and months, not a daily report card. One meal, or one imperfect log, changes essentially nothing. The fix is reframing: a rough estimate ("lunch out, ~800 cal") is infinitely better than a blank entry.</p>
+
+        <h3>Guilt and the moralization of food</h3>
+        <p>Labeling foods "good" and "bad" - or eating "clean" vs. having a "cheat meal" - gives certain foods enormous emotional power. Research links rigid, restrictive dietary styles to more eating-disorder symptoms, anxiety, depression, and body-image concern than flexible approaches. Food is just food; it has calories and nutrients, not moral value.</p>
+
+        <h3>The weekday-perfect / weekend-blowout pattern</h3>
+        <p>Extremely common: people restrict hard Monday–Friday, then overeat Saturday–Sunday on the foods they denied themselves. The math is brutal - a few large weekend days can erase the entire deficit built up over five disciplined weekdays. This is the real explanation behind most "my metabolism is broken" complaints.</p>
+      </div>
+
+      <div class="warning">
+        <span class="warning-label">⚠ When tracking becomes unhealthy</span>
+        <p>For a subset of people, tracking can fuel disordered eating - a genuine, documented risk. In one study (Levinson et al., 2017), 73% of users with eating disorders perceived MyFitnessPal as contributing to their disorder; in interviews (Eikey &amp; Reddy, 2017), 59% felt "obsessed" and "compelled" to log. Warning signs that tracking has stopped serving you and started controlling you:</p>
+        <ul>
+          <li>Anxiety or distress when you can't log something</li>
+          <li>Avoiding social meals or restaurants because you can't track precisely</li>
+          <li>Feeling you must "earn" or "punish" food with exercise or restriction</li>
+          <li>An inability to stop tracking even when you want to</li>
+          <li>Intense guilt over going slightly over a number</li>
+        </ul>
+        <p>If any of this sounds familiar, the right move is <strong>not</strong> to track <em>better</em> - it's to step back from the numbers and talk to a qualified professional: your GP, a registered dietitian, or an eating-disorder specialist in your area. No tool is worth your mental health.</p>
+      </div>
+
+      <div class="prose">
+        <h3>Burnout and sustainability</h3>
+        <p>Even done well, tracking every bite forever is unrealistic for most people - think holidays, vacations, travel, and busy seasons. Many people do best tracking in seasons, logging weekdays and easing off weekends, or using tracking to "calibrate their eye" and then stepping back. Planned breaks can actually <em>improve</em> long-term adherence.</p>
+      </div>
+
+      <h3>Is tracking even necessary? Alternatives</h3>
+      <div class="highlight">
+        <h4>The Hand-Portion Method</h4>
+        <p>No - tracking is one option, not a requirement. The best-known alternative, popularized by Precision Nutrition, uses your own hand as the measure (so it scales to your body):</p>
+        <ul>
+          <li><strong>Protein</strong> - a palm per meal</li>
+          <li><strong>Vegetables</strong> - a fist per meal</li>
+          <li><strong>Carbs</strong> - a cupped hand per meal</li>
+          <li><strong>Fats</strong> - a thumb per meal</li>
+        </ul>
+        <p>This is roughly as accurate as detailed tracking for most people - no scales, no apps. Other options: habit-based eating (protein and veggies first, eat slowly, stop at ~80% full), plate-portion methods, and intuitive eating. The right method is the one you'll actually do consistently.</p>
+      </div>
+    </section>
+
+    <!-- CONCEPTS -->
+    <section class="section" id="concepts" aria-label="Calories and Macros">
+      <div class="section-header">
+        <div class="section-icon">⚖️</div>
+        <div class="section-meta">
+          <span class="section-eyebrow">Part 2</span>
+          <h2>Calories &amp; Macros</h2>
+          <div class="section-header-sub">
+            <p>The conceptual misunderstandings worth clearing up</p>
+            <span class="read-time">6 min read</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="prose">
+        <h3>The numbers are not exact</h3>
+        <p>And this is liberating once you accept it. Label calories, app entries, and "calories burned" estimates are all approximations. The goal is a consistent estimate you can adjust from - not a perfect one.</p>
+
+        <h3>"A calorie is a calorie" - true, but incomplete</h3>
+        <p>For body weight, total energy in vs. out drives the trend. But not all calories are handled identically: protein and whole foods cost more energy to digest, and whole foods are more filling. Food <em>quality</em> still matters for hunger, health, nutrient density, and how easy your diet is to stick to.</p>
+
+        <h3>"Starvation mode" is a myth</h3>
+        <p>Your metabolism does slow somewhat when you diet and lose weight - lower body mass, less fidgeting (NEAT), hunger hormones rising. This is real and is called metabolic adaptation. But the idea that eating too little makes you <em>gain</em> weight or makes fat loss <em>impossible</em> is a myth. A true deficit always works. The slowdown is modest (tens of calories per day for most), appears early, and cannot explain a multi-week stall. Nothing is broken; nothing needs "repair."</p>
+      </div>
+
+      <h3>The thermic effect of food (TEF)</h3>
+      <div class="compare">
+        <div class="compare-box">
+          <h4>Digestion burns energy</h4>
+          <ul>
+            <li><strong>Protein:</strong> ~20–30% of its calories burned just processing it</li>
+            <li><strong>Carbs:</strong> ~5–10%</li>
+            <li><strong>Fat:</strong> ~0–3%</li>
+            <li><strong>Mixed diet:</strong> ~10% of total daily calories</li>
+          </ul>
+        </div>
+        <div class="compare-box">
+          <h4>Why it matters</h4>
+          <ul>
+            <li>A real reason higher-protein diets help with fat loss</li>
+            <li>It's a supporting factor, not magic</li>
+            <li>Don't try to "do the TEF math" - just lean protein-forward</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="prose">
+        <h3>Not all calories are even absorbed - nuts</h3>
+        <p>Whole nuts are the famous case. In USDA research (Gebauer et al., 2016), standard Atwater factors <em>overestimated</em> the energy of whole raw, whole roasted, and chopped roasted almonds by 25%, 19%, and 17% - because cell walls trap fat that passes through undigested. The effect shrinks when nuts are chopped, ground, or made into butter. The point isn't "stop counting nuts" - it's that labels are estimates, and whole, fibrous foods tend to yield slightly fewer net calories than the label says.</p>
+
+        <h3>Net carbs, fiber, and sugar alcohols</h3>
+        <p>"Net carbs" (total carbs minus fiber and sugar alcohols) is a marketing term with <strong>no legal FDA definition</strong> and is not recognized by the American Diabetes Association. Some fiber is fermented and yields energy; many sugar alcohols are partially absorbed (the EU assigns them ~2.4 kcal/g) and can still affect blood sugar - plus cause bloating in quantity. The simplest accurate approach: count <strong>total carbohydrates</strong> rather than play "net carb" games with processed foods.</p>
+
+        <h3>What actually counts</h3>
+        <p>A lot of "zero" isn't zero. The FDA lets a food be labeled "0 calories" if a serving is <strong>under 5 calories</strong>, and manufacturers exploit tiny serving sizes. Cooking spray's "serving" is a 1/4-second spray (~2 cal), so real use adds 20–50+. Sugar-free gum is ~2–5 cal a stick. None matter much alone, but a daily habit of spray + gum + "zero" condiments can quietly add 50–100 calories a day. Rule of thumb: if it has calories and you eat meaningful amounts, it counts - but don't lose sleep over a 2-calorie spritz.</p>
+
+        <h3>Macro math and alcohol</h3>
+        <p>Calories come from protein (4 cal/g), carbs (4 cal/g), fat (9 cal/g), and <strong>alcohol (7 cal/g)</strong>. App totals not matching your macro math is usually label rounding or a database entry where macros and calories don't reconcile (the app just displays the entry; it doesn't recalculate). Alcohol is the sneakiest: regulated by the TTB, not the FDA, so most drinks carry no nutrition label and listed carbs capture only a fraction of the calories. To track a drink, take its <em>total</em> calories and log them as carbs (÷4), fat (÷9), or a mix - and don't forget mixers.</p>
+      </div>
+    </section>
+
+    <!-- EXECUTION -->
+    <section class="section" id="execution" aria-label="Execution Mistakes">
+      <div class="section-header">
+        <div class="section-icon">🛠️</div>
+        <div class="section-meta">
+          <span class="section-eyebrow">Part 3 · The ones that actually matter</span>
+          <h2>Execution Mistakes</h2>
+          <div class="section-header-sub">
+            <p>Where hundreds of hidden calories really hide</p>
+            <span class="read-time">7 min read</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="mistakes">
+        <div class="mistake">
+          <div class="mistake-num">01</div>
+          <div>
+            <strong>Raw vs. cooked weighing - the #1 error</strong>
+            Cooking changes a food's <em>weight</em> but not its calories. Meat loses water and shrinks ~20–35%, so 200 g cooked chicken has <em>more</em> calories than 200 g raw. Rice and pasta absorb water and can double or triple (100 g raw rice → ~250–300 g cooked). Weigh cooked rice but log it as raw and you can record 700+ calories when you ate ~260. <strong>Fix:</strong> weigh raw whenever possible, and if you weigh cooked, pick an entry that explicitly says "cooked." Consistency is the cardinal rule.
+          </div>
+        </div>
+        <div class="mistake">
+          <div class="mistake-num">02</div>
+          <div>
+            <strong>Eyeballing instead of weighing</strong>
+            People misjudge meal calories by roughly 30–47%, and the errors compound rather than cancel. In the classic Lichtman et al. study (1992, <em>NEJM</em>), people sure they "couldn't lose weight" were underreporting intake by an average of <strong>47%</strong>. A gram is always a gram; a measuring cup is volume that varies with density and packing. <strong>Fix:</strong> a digital food scale, in grams.
+          </div>
+        </div>
+        <div class="mistake">
+          <div class="mistake-num">03</div>
+          <div>
+            <strong>Forgetting the "BLTs" - bites, licks, and tastes</strong>
+            The forgotten calories are consistent: cooking oils and butter, dressings, condiments, sauces, kids' leftovers, drinks (juice, soda, lattes, alcohol), and "tastes" while cooking. Preparation-added fats are among the most under-recorded sources, and people forget eating occasions worth ~100–300 calories each. A tablespoon of oil or dressing is ~120 calories - not trivial.
+          </div>
+        </div>
+        <div class="mistake">
+          <div class="mistake-num">04</div>
+          <div>
+            <strong>Cooking oil: absorbed vs. left in the pan</strong>
+            If some oil stays in the pan, you ate less than you poured - but it varies wildly (porous foods like mushrooms, eggplant, and potatoes soak it up; lean meat absorbs little; dressings on salad are eaten at ~100%). <strong>Fix:</strong> log what you put in the pan - it slightly overestimates, which offsets what you underestimate elsewhere. To cut both calories and guesswork, brush oil on or use a measured spray.
+          </div>
+        </div>
+        <div class="mistake">
+          <div class="mistake-num">05</div>
+          <div>
+            <strong>Restaurant meals are essentially un-trackable</strong>
+            You don't control the oil, butter, portions, or hidden ingredients, and menu calories are often understated. Two-thirds of people underestimate restaurant meals, often by 500+ calories, and "healthy"-seeming salads and grain bowls are underestimated most. <strong>Fix:</strong> estimate, lean toward the higher end, accept the imprecision, and don't let one meal derail you.
+          </div>
+        </div>
+        <div class="mistake">
+          <div class="mistake-num">06</div>
+          <div>
+            <strong>Home-cooked mixed dishes</strong>
+            Chili, curry, casseroles are a common failure point. <strong>Fix:</strong> weigh each raw ingredient, build the dish in your app's recipe builder, weigh the total cooked yield, then log by the gram (e.g., 900 g cooked curry ÷ 4 = 225 g per serving). Don't select a random stranger's "lasagna, 1 serving."
+          </div>
+        </div>
+        <div class="mistake">
+          <div class="mistake-num">07</div>
+          <div>
+            <strong>App database errors (MyFitnessPal &amp; similar)</strong>
+            The database is crowdsourced from millions of unverified entries, so the same food has many conflicting versions (the "five banana problem"). The "green check" only means an entry has complete macros - <em>not</em> that it's verified. <strong>Fix:</strong> vet new entries against the package label or USDA FoodData Central the first time, then reuse from "recent/frequent." Prefer simple single-ingredient entries with gram weights.
+          </div>
+        </div>
+        <div class="mistake">
+          <div class="mistake-num">08</div>
+          <div>
+            <strong>Barcode-scanning pitfalls</strong>
+            Fast and usually good, but it can pull the wrong entry - an outdated formulation (a bar reformulated from 210 to 190 cal keeps the same barcode), a different-region version, or a user entry with errors. <strong>Fix:</strong> verify a scanned entry against the package the first time.
+          </div>
+        </div>
+        <div class="mistake">
+          <div class="mistake-num">09</div>
+          <div>
+            <strong>Labels are legally allowed to be off</strong>
+            Under FDA rules (21 CFR 101.9(g)(5)), a product is misbranded only if the nutrient content is more than <strong>20% above</strong> the label - so a "200-calorie" item can legally contain 240. Independent testing (Urban et al., 2011, <em>JAMA</em>; Tufts, 2010) found many restaurant items understated, some up to twice the listed amount. Treat labels as ballpark, not guarantee.
+          </div>
+        </div>
+        <div class="mistake">
+          <div class="mistake-num">10</div>
+          <div>
+            <strong>Packaging and produce variance</strong>
+            A "100 g" bar isn't exactly 100 g, and a "medium banana" ranges roughly 72–135 calories by size. <strong>Fix:</strong> for variable whole foods, weigh in grams rather than logging by "1 medium/small/large."
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- THE PLAN -->
+    <section class="section" id="plan" aria-label="The Plan">
+      <div class="section-header">
+        <div class="section-icon">🗺️</div>
+        <div class="section-meta">
+          <span class="section-eyebrow">Recommendations</span>
+          <h2>The Plan</h2>
+          <div class="section-header-sub">
+            <p>Four stages - from mindset to graduating off the app</p>
+            <span class="read-time">4 min read</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-body">
+            <h4>Start with mindset</h4>
+            <p>Before you log a single calorie: adopt "consistently good, not perfect" - imperfect logs still count, and one off-meal changes nothing. Drop the "good/bad food" and "cheat day" language. Decide <strong>why</strong> you're tracking and for how long.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-body">
+            <h4>Fix the big execution errors (≈90% of the benefit)</h4>
+            <p><strong>Weigh raw, in grams, with a digital scale</strong> - this alone fixes the two largest errors. <strong>Log the "little stuff" that's actually big:</strong> oils, butter, dressings, sauces, drinks, alcohol. <strong>Vet your database entries</strong> once, then reuse; use the recipe builder for mixed meals. And don't sweat a 2-calorie spray while ignoring oils and weekends - that's backwards.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-body">
+            <h4>Handle the un-trackable and the long term</h4>
+            <p>For restaurants and travel: estimate, round up, move on. Watch the <strong>weekend pattern</strong> - the most common hidden reason for no progress. If the scale stalls for 2–3+ weeks, assume <strong>adherence drift</strong>, not "starvation mode": re-tighten weighing, re-check entries, and audit weekends <em>before</em> cutting calories further.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <div class="step-body">
+            <h4>Graduate or switch when ready</h4>
+            <p>Once you can "eyeball" portions well, transition to <strong>hand portions</strong> or habit-based eating for maintenance. Many people don't need to track forever.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="warning">
+        <span class="warning-label">⚠ When to change course entirely</span>
+        <p>If tracking is causing anxiety, social avoidance, guilt, or compulsive behavior - or you can't stop even when you want to - that's the threshold to stop tracking and seek support from your GP, a registered dietitian, or an eating-disorder specialist in your region. Better data is never worth a worse relationship with food.</p>
+      </div>
+    </section>
+
+    <!-- KEY NUMBERS -->
+    <section class="section" id="numbers" aria-label="Key Numbers">
+      <div class="section-header">
+        <div class="section-icon">🔢</div>
+        <div class="section-meta">
+          <span class="section-eyebrow">Reference</span>
+          <h2>Key Numbers</h2>
+          <div class="section-header-sub">
+            <p>The figures worth remembering</p>
+            <span class="read-time">1 min read</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="numbers-grid">
+        <div class="number-card"><div class="num">2×</div><div class="num-label">More weight lost with daily food records (Kaiser, 2008)</div></div>
+        <div class="number-card"><div class="num">20%</div><div class="num-label">Legal label tolerance - "200 cal" can be 240 (FDA)</div></div>
+        <div class="number-card"><div class="num">47%</div><div class="num-label">Average intake under-reporting (Lichtman, NEJM 1992)</div></div>
+        <div class="number-card"><div class="num">25%</div><div class="num-label">Whole-almond calorie overestimate (USDA)</div></div>
+        <div class="number-card"><div class="num">20–30%</div><div class="num-label">Protein's thermic effect (TEF)</div></div>
+        <div class="number-card"><div class="num">~25%</div><div class="num-label">Weight meat loses when cooked</div></div>
+        <div class="number-card"><div class="num">~120</div><div class="num-label">Calories in a tablespoon of oil or dressing</div></div>
+        <div class="number-card"><div class="num">7</div><div class="num-label">Calories per gram of alcohol</div></div>
+      </div>
+    </section>
+
+    <!-- CAVEATS -->
+    <section class="section" id="caveats" aria-label="Caveats">
+      <div class="section-header">
+        <div class="section-icon">⚠️</div>
+        <div class="section-meta">
+          <span class="section-eyebrow">Read This Too</span>
+          <h2>Caveats</h2>
+          <div class="section-header-sub">
+            <p>How sure we are, and where the limits are</p>
+            <span class="read-time">2 min read</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="highlight">
+        <h4>Before you take any of this as gospel</h4>
+        <ul>
+          <li><strong>Sourcing quality varies.</strong> The hard numbers (FDA's 20% tolerance; the Lichtman 1992 NEJM study; USDA almond research; Urban et al. restaurant testing; TEF ranges; the Kaiser daily-records finding) come from regulations and peer-reviewed studies. Many practical "how-to" points are best documented by coaches and app companies - directionally accurate and widely corroborated, but some app-company claims are commercially motivated.</li>
+          <li><strong>Individual variation is real.</strong> TEF, absorption, and metabolic adaptation differ person to person. The figures here are population averages, not personal guarantees.</li>
+          <li><strong>"Off by 20%" is a legal maximum, not a typical error.</strong> Most labels are closer; the tolerance shows labels <em>can</em> be meaningfully off, not that they always are.</li>
+          <li><strong>This is general education, not medical or psychological advice.</strong> Anyone with diabetes, a history of disordered eating, or other medical conditions should work with a qualified professional rather than relying on an app.</li>
+        </ul>
+      </div>
+
+      <!-- CTA -->
+      <div class="cta-block">
+        <div class="cta-block-text">
+          <h2>Want this dialed in for you?</h2>
+          <p>I coach everyday people and serious athletes through exactly this - building habits that hold up in real life, not just on paper. First consultation is free.</p>
+        </div>
+        <a href="https://brusovcoach.org/#contact" class="cta-btn">Free Consultation →</a>
+      </div>
+    </section>
+
+  </div><!-- /content -->
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <h3>Food Tracking, Honestly</h3>
+      <p>Professional Coaching Knowledge Base - Online coaching worldwide | St. Louis, MO</p>
+    </div>
+    <div class="footer-links">
+      <a href="https://brusovcoach.org" target="_blank" rel="noopener noreferrer">Vladimir Brusov</a>
+      <a href="https://hypertrophy.brusovcoach.org" target="_blank" rel="noopener noreferrer">Hypertrophy Hub</a>
+      <a href="mailto:vladimirbrusov83@gmail.com">Email</a>
+    </div>
+    <div class="footer-copy">© <span id="footerYear"></span> All rights reserved.</div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('footerYear').textContent = new Date().getFullYear();
+
+  // Scroll progress bar
+  window.addEventListener('scroll', function() {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+    document.getElementById('progressBar').style.height = progress + '%';
+  });
+
+  // Active sidebar link on scroll
+  const sections = document.querySelectorAll('.section');
+  const navLinks = document.querySelectorAll('.sidebar a');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navLinks.forEach(a => a.classList.remove('active'));
+        const active = document.querySelector(`.sidebar a[href="#${entry.target.id}"]`);
+        if (active) active.classList.add('active');
+      }
+    });
+  }, { threshold: 0.2, rootMargin: '-10% 0px -70% 0px' });
+  sections.forEach(s => observer.observe(s));
+
+  // Search filter
+  document.getElementById('searchInput').addEventListener('input', function() {
+    const query = this.value.toLowerCase().trim();
+    sections.forEach(section => {
+      if (!query) { section.classList.remove('hidden'); return; }
+      section.classList.toggle('hidden', !section.textContent.toLowerCase().includes(query));
+    });
+  });
+
+  // Mobile menu
+  const mobileMenu = document.getElementById('mobileMenu');
+  const menuBackdrop = document.getElementById('menuBackdrop');
+  const menuToggleBtn = document.getElementById('menuToggleBtn');
+  function openMenu() { mobileMenu.classList.add('open'); menuBackdrop.classList.add('open'); menuToggleBtn.setAttribute('aria-expanded','true'); }
+  function closeMenu() { mobileMenu.classList.remove('open'); menuBackdrop.classList.remove('open'); menuToggleBtn.setAttribute('aria-expanded','false'); }
+  menuToggleBtn.addEventListener('click', openMenu);
+  document.getElementById('menuCloseBtn').addEventListener('click', closeMenu);
+  menuBackdrop.addEventListener('click', closeMenu);
+  document.querySelectorAll('.mobile-menu nav a').forEach(link => link.addEventListener('click', closeMenu));
+</script>
+</body>
+</html>
