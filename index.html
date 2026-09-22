@@ -598,6 +598,23 @@
     .search-wrap { display: block; flex: 1; min-width: 0; }
     .search-wrap input, .search-wrap input:focus { width: 100%; font-size: 16px; padding: 8px 14px; }
   }
+
+  /* Training hub link: filled accent button so it stands out */
+  .sidebar .sidebar-back-bar { padding: 14px 22px; }
+  .sidebar .sidebar-back-bar a {
+    justify-content: center;
+    padding: 10px 14px;
+    background: var(--accent);
+    color: #fff;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+  }
+  .sidebar .sidebar-back-bar a::before { content: "\2190"; }
+  .sidebar .sidebar-back-bar a:hover { color: #fff; filter: brightness(1.15); }
+  .mobile-back-btn { background: var(--accent); color: #fff; border-color: var(--accent); font-weight: 700; }
+  .mobile-back-btn:hover { background: var(--accent); color: #fff; filter: brightness(1.15); }
 </style>
 </head>
 <body>
