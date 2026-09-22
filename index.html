@@ -176,7 +176,7 @@
   .search-wrap { position: relative; }
   .search-wrap input {
     background: var(--bg3); border: 1px solid var(--border); border-radius: 3px;
-    padding: 5px 14px 5px 32px; font-size: 12px; font-family: var(--font-body);
+    padding: 5px 14px; font-size: 12px; font-family: var(--font-body);
     color: var(--text); outline: none; width: 200px; transition: border-color 0.12s, width 0.2s;
   }
   .search-wrap input:focus { border-color: var(--accent); width: 240px; }
@@ -373,13 +373,13 @@
   .sidebar::-webkit-scrollbar-thumb { background: var(--border-light); border-radius: 2px; }
 
   /* ─────────────────────────────────────────────
-     ACADEMIC PASS — screen typography & restraint.
+     ACADEMIC PASS: screen typography & restraint.
      Serif headings, sentence case, hairline rules,
      capped reading measure. Small tracked caps are
      kept for labels only (journal convention).
      ───────────────────────────────────────────── */
 
-  /* Reading measure — prose no longer runs the full viewport */
+  /* Reading measure: prose no longer runs the full viewport */
   .content { max-width: var(--measure); }
   .hero-inner, .hero > * { max-width: var(--measure); }
 
@@ -596,7 +596,7 @@
     /* stick below the mobile header instead of sliding under it */
     .filter-bar { top: 64px; }
     .search-wrap { display: block; flex: 1; min-width: 0; }
-    .search-wrap input, .search-wrap input:focus { width: 100%; font-size: 16px; padding: 8px 14px 8px 34px; }
+    .search-wrap input, .search-wrap input:focus { width: 100%; font-size: 16px; padding: 8px 14px; }
   }
 </style>
 </head>
@@ -668,15 +668,14 @@
   <div class="hero">
     <div class="hero-eyebrow">Professional Coaching Resource</div>
     <div style="font-family:var(--font-display);font-size:12px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--muted);margin-bottom:10px;">Coach Vladimir Brusov</div>
-    <h1>Food Tracking - Myths, Mistakes &amp; What Actually Matters</h1>
-    <p class="hero-desc">Tracking works because it builds awareness, not because it's precise. Here's how to fix the few things that actually matter - and stop obsessing over the rest.</p>
+    <h1>Food Tracking: Myths, Mistakes &amp; What Actually Matters</h1>
+    <p class="hero-desc">Tracking works because it builds awareness, not because it's precise. Here's how to fix the few things that actually matter, and stop obsessing over the rest.</p>
   </div>
 
   <!-- FILTER BAR -->
   <div class="filter-bar" role="search">
     <span class="filter-label">Search:</span>
     <div class="search-wrap">
-      <span class="search-icon">🔍</span>
       <input type="search" id="searchInput" placeholder="Search topics..." aria-label="Search topics">
     </div>
   </div>
@@ -687,12 +686,11 @@
     <!-- MY TAKE -->
     <section class="section" id="philosophy" aria-label="My Take">
       <div class="section-header">
-        <div class="section-icon">🎯</div>
         <div class="section-meta">
           <span class="section-eyebrow">Foundational Framework</span>
           <h2>My Take</h2>
           <div class="section-header-sub">
-            <p>Why most people track wrong - and what to do instead</p>
+            <p>Why most people track wrong, and what to do instead</p>
             <span class="read-time">2 min read</span>
           </div>
         </div>
@@ -701,19 +699,18 @@
       <div class="philosophy">
         <div class="philosophy-label">Foundational Framework</div>
         <h2>Aim for consistently good, not perfect.</h2>
-        <p>Food tracking works because it builds <strong>awareness</strong>, not because it's precise. The numbers in your app are good estimates - not exact measurements - and trying to make them perfect is the fastest way to burn out and quit.</p>
-        <p>In Kaiser Permanente's 2008 trial of 1,685 adults (Hollis et al.), those who kept daily food records lost <strong>twice as much weight</strong> as those who kept none. The point isn't the decimal places - it's the habit. Track to steer, not to grade yourself. And know that it's a tool with an off-ramp, not a life sentence.</p>
+        <p>Food tracking works because it builds <strong>awareness</strong>, not because it's precise. The numbers in your app are good estimates, not exact measurements, and trying to make them perfect is the fastest way to burn out and quit.</p>
+        <p>In Kaiser Permanente's 2008 trial of 1,685 adults (Hollis et al.), those who kept daily food records lost <strong>twice as much weight</strong> as those who kept none. The point isn't the decimal places; it's the habit. Track to steer, not to grade yourself. And know that it's a tool with an off-ramp, not a life sentence.</p>
       </div>
 
       <div class="callout">
-        The biggest <strong>real</strong> errors are practical and fixable: confusing raw vs. cooked weights, eyeballing portions, forgetting bites and oils and drinks, picking the wrong app-database entry, and "weekend blowouts." These dwarf the small stuff people obsess over - like cooking spray or a few calories on a label.
+        The biggest <strong>real</strong> errors are practical and fixable: confusing raw vs. cooked weights, eyeballing portions, forgetting bites and oils and drinks, picking the wrong app-database entry, and "weekend blowouts." These dwarf the small stuff people obsess over, like cooking spray or a few calories on a label.
       </div>
     </section>
 
     <!-- KEY FINDINGS -->
     <section class="section" id="findings" aria-label="Key Findings">
       <div class="section-header">
-        <div class="section-icon">🔑</div>
         <div class="section-meta">
           <span class="section-eyebrow">The Big Picture</span>
           <h2>Key Findings</h2>
@@ -728,7 +725,7 @@
         <div class="step">
           <div class="step-num">1</div>
           <div class="step-body">
-            <h4>Precision is a myth - and chasing it backfires</h4>
+            <h4>Precision is a myth, and chasing it backfires</h4>
             <p>Food labels are legally allowed to be off by a wide margin, app databases are crowdsourced and frequently wrong, and even dietitians misjudge meals. Tracking is a steering tool, not a scale-accurate science.</p>
           </div>
         </div>
@@ -750,7 +747,7 @@
           <div class="step-num">4</div>
           <div class="step-body">
             <h4>Plateaus are almost never "starvation mode"</h4>
-            <p>Metabolic adaptation is real but small; stalls are nearly always "adherence drift" - a gap between what you think you ate and what you actually ate.</p>
+            <p>Metabolic adaptation is real but small; stalls are nearly always "adherence drift": a gap between what you think you ate and what you actually ate.</p>
           </div>
         </div>
         <div class="step">
@@ -766,7 +763,6 @@
     <!-- PSYCHOLOGY -->
     <section class="section" id="psychology" aria-label="Psychology of Tracking">
       <div class="section-header">
-        <div class="section-icon">🧠</div>
         <div class="section-meta">
           <span class="section-eyebrow">Part 1</span>
           <h2>Psychology of Tracking</h2>
@@ -778,22 +774,22 @@
       </div>
 
       <div class="prose">
-        <h3>Why people start - and why they quit</h3>
-        <p>People start tracking for awareness and control: it reveals patterns you genuinely cannot see otherwise. Simply logging food tends to reduce how much people eat, even before they consciously try to cut back. But most people quit, and the reasons are predictable: it feels too time-consuming, socially awkward at restaurants, and mentally exhausting. Detailed calorie tracking reliably declines over time, and people who stop tracking generally stop seeing results - so <em>sustainability</em> is the whole game.</p>
+        <h3>Why people start, and why they quit</h3>
+        <p>People start tracking for awareness and control: it reveals patterns you genuinely cannot see otherwise. Simply logging food tends to reduce how much people eat, even before they consciously try to cut back. But most people quit, and the reasons are predictable: it feels too time-consuming, socially awkward at restaurants, and mentally exhausting. Detailed calorie tracking reliably declines over time, and people who stop tracking generally stop seeing results, so <em>sustainability</em> is the whole game.</p>
 
         <h3>All-or-nothing thinking</h3>
-        <p>This is, according to many dietitians, the single most common way clients sabotage themselves. The pattern: you eat one cookie, decide you've "blown it," and eat the whole box - then write off the rest of the day (or week) and plan to "start again Monday." Your body responds to patterns over weeks and months, not a daily report card. One meal, or one imperfect log, changes essentially nothing. The fix is reframing: a rough estimate ("lunch out, ~800 cal") is infinitely better than a blank entry.</p>
+        <p>This is, according to many dietitians, the single most common way clients sabotage themselves. The pattern: you eat one cookie, decide you've "blown it," and eat the whole box, then write off the rest of the day (or week) and plan to "start again Monday." Your body responds to patterns over weeks and months, not a daily report card. One meal, or one imperfect log, changes essentially nothing. The fix is reframing: a rough estimate ("lunch out, ~800 cal") is infinitely better than a blank entry.</p>
 
         <h3>Guilt and the moralization of food</h3>
-        <p>Labeling foods "good" and "bad" - or eating "clean" vs. having a "cheat meal" - gives certain foods enormous emotional power. Research links rigid, restrictive dietary styles to more eating-disorder symptoms, anxiety, depression, and body-image concern than flexible approaches. Food is just food; it has calories and nutrients, not moral value.</p>
+        <p>Labeling foods "good" and "bad", or eating "clean" vs. having a "cheat meal", gives certain foods enormous emotional power. Research links rigid, restrictive dietary styles to more eating-disorder symptoms, anxiety, depression, and body-image concern than flexible approaches. Food is just food; it has calories and nutrients, not moral value.</p>
 
         <h3>The weekday-perfect / weekend-blowout pattern</h3>
-        <p>Extremely common: people restrict hard Monday–Friday, then overeat Saturday–Sunday on the foods they denied themselves. The math is brutal - a few large weekend days can erase the entire deficit built up over five disciplined weekdays. This is the real explanation behind most "my metabolism is broken" complaints.</p>
+        <p>Extremely common: people restrict hard Monday–Friday, then overeat Saturday–Sunday on the foods they denied themselves. The math is brutal: a few large weekend days can erase the entire deficit built up over five disciplined weekdays. This is the real explanation behind most "my metabolism is broken" complaints.</p>
       </div>
 
       <div class="warning">
-        <span class="warning-label">⚠ When tracking becomes unhealthy</span>
-        <p>For a subset of people, tracking can fuel disordered eating - a genuine, documented risk. In one study (Levinson et al., 2017), 73% of users with eating disorders perceived MyFitnessPal as contributing to their disorder; in interviews (Eikey &amp; Reddy, 2017), 59% felt "obsessed" and "compelled" to log. Warning signs that tracking has stopped serving you and started controlling you:</p>
+        <span class="warning-label">When tracking becomes unhealthy</span>
+        <p>For a subset of people, tracking can fuel disordered eating, a genuine, documented risk. In one study (Levinson et al., 2017), 73% of users with eating disorders perceived MyFitnessPal as contributing to their disorder; in interviews (Eikey &amp; Reddy, 2017), 59% felt "obsessed" and "compelled" to log. Warning signs that tracking has stopped serving you and started controlling you:</p>
         <ul>
           <li>Anxiety or distress when you can't log something</li>
           <li>Avoiding social meals or restaurants because you can't track precisely</li>
@@ -801,32 +797,31 @@
           <li>An inability to stop tracking even when you want to</li>
           <li>Intense guilt over going slightly over a number</li>
         </ul>
-        <p>If any of this sounds familiar, the right move is <strong>not</strong> to track <em>better</em> - it's to step back from the numbers and talk to a qualified professional: your GP, a registered dietitian, or an eating-disorder specialist in your area. No tool is worth your mental health.</p>
+        <p>If any of this sounds familiar, the right move is <strong>not</strong> to track <em>better</em>; it's to step back from the numbers and talk to a qualified professional: your GP, a registered dietitian, or an eating-disorder specialist in your area. No tool is worth your mental health.</p>
       </div>
 
       <div class="prose">
         <h3>Burnout and sustainability</h3>
-        <p>Even done well, tracking every bite forever is unrealistic for most people - think holidays, vacations, travel, and busy seasons. Many people do best tracking in seasons, logging weekdays and easing off weekends, or using tracking to "calibrate their eye" and then stepping back. Planned breaks can actually <em>improve</em> long-term adherence.</p>
+        <p>Even done well, tracking every bite forever is unrealistic for most people: think holidays, vacations, travel, and busy seasons. Many people do best tracking in seasons, logging weekdays and easing off weekends, or using tracking to "calibrate their eye" and then stepping back. Planned breaks can actually <em>improve</em> long-term adherence.</p>
       </div>
 
       <h3>Is tracking even necessary? Alternatives</h3>
       <div class="highlight">
         <h4>The Hand-Portion Method</h4>
-        <p>No - tracking is one option, not a requirement. The best-known alternative, popularized by Precision Nutrition, uses your own hand as the measure (so it scales to your body):</p>
+        <p>No. Tracking is one option, not a requirement. The best-known alternative, popularized by Precision Nutrition, uses your own hand as the measure (so it scales to your body):</p>
         <ul>
-          <li><strong>Protein</strong> - a palm per meal</li>
-          <li><strong>Vegetables</strong> - a fist per meal</li>
-          <li><strong>Carbs</strong> - a cupped hand per meal</li>
-          <li><strong>Fats</strong> - a thumb per meal</li>
+          <li><strong>Protein</strong>: a palm per meal</li>
+          <li><strong>Vegetables</strong>: a fist per meal</li>
+          <li><strong>Carbs</strong>: a cupped hand per meal</li>
+          <li><strong>Fats</strong>: a thumb per meal</li>
         </ul>
-        <p>This is roughly as accurate as detailed tracking for most people - no scales, no apps. Other options: habit-based eating (protein and veggies first, eat slowly, stop at ~80% full), plate-portion methods, and intuitive eating. The right method is the one you'll actually do consistently.</p>
+        <p>This is roughly as accurate as detailed tracking for most people, no scales, no apps. Other options: habit-based eating (protein and veggies first, eat slowly, stop at ~80% full), plate-portion methods, and intuitive eating. The right method is the one you'll actually do consistently.</p>
       </div>
     </section>
 
     <!-- CONCEPTS -->
     <section class="section" id="concepts" aria-label="Calories and Macros">
       <div class="section-header">
-        <div class="section-icon">⚖️</div>
         <div class="section-meta">
           <span class="section-eyebrow">Part 2</span>
           <h2>Calories &amp; Macros</h2>
@@ -839,13 +834,13 @@
 
       <div class="prose">
         <h3>The numbers are not exact</h3>
-        <p>And this is liberating once you accept it. Label calories, app entries, and "calories burned" estimates are all approximations. The goal is a consistent estimate you can adjust from - not a perfect one.</p>
+        <p>And this is liberating once you accept it. Label calories, app entries, and "calories burned" estimates are all approximations. The goal is a consistent estimate you can adjust from, not a perfect one.</p>
 
-        <h3>"A calorie is a calorie" - true, but incomplete</h3>
+        <h3>"A calorie is a calorie": true, but incomplete</h3>
         <p>For body weight, total energy in vs. out drives the trend. But not all calories are handled identically: protein and whole foods cost more energy to digest, and whole foods are more filling. Food <em>quality</em> still matters for hunger, health, nutrient density, and how easy your diet is to stick to.</p>
 
         <h3>"Starvation mode" is a myth</h3>
-        <p>Your metabolism does slow somewhat when you diet and lose weight - lower body mass, less fidgeting (NEAT), hunger hormones rising. This is real and is called metabolic adaptation. But the idea that eating too little makes you <em>gain</em> weight or makes fat loss <em>impossible</em> is a myth. A true deficit always works. The slowdown is modest (tens of calories per day for most), appears early, and cannot explain a multi-week stall. Nothing is broken; nothing needs "repair."</p>
+        <p>Your metabolism does slow somewhat when you diet and lose weight: lower body mass, less fidgeting (NEAT), hunger hormones rising. This is real and is called metabolic adaptation. But the idea that eating too little makes you <em>gain</em> weight or makes fat loss <em>impossible</em> is a myth. A true deficit always works. The slowdown is modest (tens of calories per day for most), appears early, and cannot explain a multi-week stall. Nothing is broken; nothing needs "repair."</p>
       </div>
 
       <h3>The thermic effect of food (TEF)</h3>
@@ -864,30 +859,29 @@
           <ul>
             <li>A real reason higher-protein diets help with fat loss</li>
             <li>It's a supporting factor, not magic</li>
-            <li>Don't try to "do the TEF math" - just lean protein-forward</li>
+            <li>Don't try to "do the TEF math"; just lean protein-forward</li>
           </ul>
         </div>
       </div>
 
       <div class="prose">
-        <h3>Not all calories are even absorbed - nuts</h3>
-        <p>Whole nuts are the famous case. In USDA research (Gebauer et al., 2016), standard Atwater factors <em>overestimated</em> the energy of whole raw, whole roasted, and chopped roasted almonds by 25%, 19%, and 17% - because cell walls trap fat that passes through undigested. The effect shrinks when nuts are chopped, ground, or made into butter. The point isn't "stop counting nuts" - it's that labels are estimates, and whole, fibrous foods tend to yield slightly fewer net calories than the label says.</p>
+        <h3>Not all calories are even absorbed: nuts</h3>
+        <p>Whole nuts are the famous case. In USDA research (Gebauer et al., 2016), standard Atwater factors <em>overestimated</em> the energy of whole raw, whole roasted, and chopped roasted almonds by 25%, 19%, and 17%, because cell walls trap fat that passes through undigested. The effect shrinks when nuts are chopped, ground, or made into butter. The point isn't "stop counting nuts"; it's that labels are estimates, and whole, fibrous foods tend to yield slightly fewer net calories than the label says.</p>
 
         <h3>Net carbs, fiber, and sugar alcohols</h3>
-        <p>"Net carbs" (total carbs minus fiber and sugar alcohols) is a marketing term with <strong>no legal FDA definition</strong> and is not recognized by the American Diabetes Association. Some fiber is fermented and yields energy; many sugar alcohols are partially absorbed (the EU assigns them ~2.4 kcal/g) and can still affect blood sugar - plus cause bloating in quantity. The simplest accurate approach: count <strong>total carbohydrates</strong> rather than play "net carb" games with processed foods.</p>
+        <p>"Net carbs" (total carbs minus fiber and sugar alcohols) is a marketing term with <strong>no legal FDA definition</strong> and is not recognized by the American Diabetes Association. Some fiber is fermented and yields energy; many sugar alcohols are partially absorbed (the EU assigns them ~2.4 kcal/g) and can still affect blood sugar, plus cause bloating in quantity. The simplest accurate approach: count <strong>total carbohydrates</strong> rather than play "net carb" games with processed foods.</p>
 
         <h3>What actually counts</h3>
-        <p>A lot of "zero" isn't zero. The FDA lets a food be labeled "0 calories" if a serving is <strong>under 5 calories</strong>, and manufacturers exploit tiny serving sizes. Cooking spray's "serving" is a 1/4-second spray (~2 cal), so real use adds 20–50+. Sugar-free gum is ~2–5 cal a stick. None matter much alone, but a daily habit of spray + gum + "zero" condiments can quietly add 50–100 calories a day. Rule of thumb: if it has calories and you eat meaningful amounts, it counts - but don't lose sleep over a 2-calorie spritz.</p>
+        <p>A lot of "zero" isn't zero. The FDA lets a food be labeled "0 calories" if a serving is <strong>under 5 calories</strong>, and manufacturers exploit tiny serving sizes. Cooking spray's "serving" is a 1/4-second spray (~2 cal), so real use adds 20–50+. Sugar-free gum is ~2–5 cal a stick. None matter much alone, but a daily habit of spray + gum + "zero" condiments can quietly add 50–100 calories a day. Rule of thumb: if it has calories and you eat meaningful amounts, it counts, but don't lose sleep over a 2-calorie spritz.</p>
 
         <h3>Macro math and alcohol</h3>
-        <p>Calories come from protein (4 cal/g), carbs (4 cal/g), fat (9 cal/g), and <strong>alcohol (7 cal/g)</strong>. App totals not matching your macro math is usually label rounding or a database entry where macros and calories don't reconcile (the app just displays the entry; it doesn't recalculate). Alcohol is the sneakiest: regulated by the TTB, not the FDA, so most drinks carry no nutrition label and listed carbs capture only a fraction of the calories. To track a drink, take its <em>total</em> calories and log them as carbs (÷4), fat (÷9), or a mix - and don't forget mixers.</p>
+        <p>Calories come from protein (4 cal/g), carbs (4 cal/g), fat (9 cal/g), and <strong>alcohol (7 cal/g)</strong>. App totals not matching your macro math is usually label rounding or a database entry where macros and calories don't reconcile (the app just displays the entry; it doesn't recalculate). Alcohol is the sneakiest: regulated by the TTB, not the FDA, so most drinks carry no nutrition label and listed carbs capture only a fraction of the calories. To track a drink, take its <em>total</em> calories and log them as carbs (÷4), fat (÷9), or a mix, and don't forget mixers.</p>
       </div>
     </section>
 
     <!-- EXECUTION -->
     <section class="section" id="execution" aria-label="Execution Mistakes">
       <div class="section-header">
-        <div class="section-icon">🛠️</div>
         <div class="section-meta">
           <span class="section-eyebrow">Part 3 · The ones that actually matter</span>
           <h2>Execution Mistakes</h2>
@@ -902,7 +896,7 @@
         <div class="mistake">
           <div class="mistake-num">01</div>
           <div>
-            <strong>Raw vs. cooked weighing - the #1 error</strong>
+            <strong>Raw vs. cooked weighing: the #1 error</strong>
             Cooking changes a food's <em>weight</em> but not its calories. Meat loses water and shrinks ~20–35%, so 200 g cooked chicken has <em>more</em> calories than 200 g raw. Rice and pasta absorb water and can double or triple (100 g raw rice → ~250–300 g cooked). Weigh cooked rice but log it as raw and you can record 700+ calories when you ate ~260. <strong>Fix:</strong> weigh raw whenever possible, and if you weigh cooked, pick an entry that explicitly says "cooked." Consistency is the cardinal rule.
           </div>
         </div>
@@ -916,15 +910,15 @@
         <div class="mistake">
           <div class="mistake-num">03</div>
           <div>
-            <strong>Forgetting the "BLTs" - bites, licks, and tastes</strong>
-            The forgotten calories are consistent: cooking oils and butter, dressings, condiments, sauces, kids' leftovers, drinks (juice, soda, lattes, alcohol), and "tastes" while cooking. Preparation-added fats are among the most under-recorded sources, and people forget eating occasions worth ~100–300 calories each. A tablespoon of oil or dressing is ~120 calories - not trivial.
+            <strong>Forgetting the "BLTs": bites, licks, and tastes</strong>
+            The forgotten calories are consistent: cooking oils and butter, dressings, condiments, sauces, kids' leftovers, drinks (juice, soda, lattes, alcohol), and "tastes" while cooking. Preparation-added fats are among the most under-recorded sources, and people forget eating occasions worth ~100–300 calories each. A tablespoon of oil or dressing is ~120 calories, not trivial.
           </div>
         </div>
         <div class="mistake">
           <div class="mistake-num">04</div>
           <div>
             <strong>Cooking oil: absorbed vs. left in the pan</strong>
-            If some oil stays in the pan, you ate less than you poured - but it varies wildly (porous foods like mushrooms, eggplant, and potatoes soak it up; lean meat absorbs little; dressings on salad are eaten at ~100%). <strong>Fix:</strong> log what you put in the pan - it slightly overestimates, which offsets what you underestimate elsewhere. To cut both calories and guesswork, brush oil on or use a measured spray.
+            If some oil stays in the pan, you ate less than you poured, but it varies wildly (porous foods like mushrooms, eggplant, and potatoes soak it up; lean meat absorbs little; dressings on salad are eaten at ~100%). <strong>Fix:</strong> log what you put in the pan; it slightly overestimates, which offsets what you underestimate elsewhere. To cut both calories and guesswork, brush oil on or use a measured spray.
           </div>
         </div>
         <div class="mistake">
@@ -945,21 +939,21 @@
           <div class="mistake-num">07</div>
           <div>
             <strong>App database errors (MyFitnessPal &amp; similar)</strong>
-            The database is crowdsourced from millions of unverified entries, so the same food has many conflicting versions (the "five banana problem"). The "green check" only means an entry has complete macros - <em>not</em> that it's verified. <strong>Fix:</strong> vet new entries against the package label or USDA FoodData Central the first time, then reuse from "recent/frequent." Prefer simple single-ingredient entries with gram weights.
+            The database is crowdsourced from millions of unverified entries, so the same food has many conflicting versions (the "five banana problem"). The "green check" only means an entry has complete macros, <em>not</em> that it's verified. <strong>Fix:</strong> vet new entries against the package label or USDA FoodData Central the first time, then reuse from "recent/frequent." Prefer simple single-ingredient entries with gram weights.
           </div>
         </div>
         <div class="mistake">
           <div class="mistake-num">08</div>
           <div>
             <strong>Barcode-scanning pitfalls</strong>
-            Fast and usually good, but it can pull the wrong entry - an outdated formulation (a bar reformulated from 210 to 190 cal keeps the same barcode), a different-region version, or a user entry with errors. <strong>Fix:</strong> verify a scanned entry against the package the first time.
+            Fast and usually good, but it can pull the wrong entry: an outdated formulation (a bar reformulated from 210 to 190 cal keeps the same barcode), a different-region version, or a user entry with errors. <strong>Fix:</strong> verify a scanned entry against the package the first time.
           </div>
         </div>
         <div class="mistake">
           <div class="mistake-num">09</div>
           <div>
             <strong>Labels are legally allowed to be off</strong>
-            Under FDA rules (21 CFR 101.9(g)(5)), a product is misbranded only if the nutrient content is more than <strong>20% above</strong> the label - so a "200-calorie" item can legally contain 240. Independent testing (Urban et al., 2011, <em>JAMA</em>; Tufts, 2010) found many restaurant items understated, some up to twice the listed amount. Treat labels as ballpark, not guarantee.
+            Under FDA rules (21 CFR 101.9(g)(5)), a product is misbranded only if the nutrient content is more than <strong>20% above</strong> the label, so a "200-calorie" item can legally contain 240. Independent testing (Urban et al., 2011, <em>JAMA</em>; Tufts, 2010) found many restaurant items understated, some up to twice the listed amount. Treat labels as ballpark, not guarantee.
           </div>
         </div>
         <div class="mistake">
@@ -975,12 +969,11 @@
     <!-- THE PLAN -->
     <section class="section" id="plan" aria-label="The Plan">
       <div class="section-header">
-        <div class="section-icon">🗺️</div>
         <div class="section-meta">
           <span class="section-eyebrow">Recommendations</span>
           <h2>The Plan</h2>
           <div class="section-header-sub">
-            <p>Four stages - from mindset to graduating off the app</p>
+            <p>Four stages, from mindset to graduating off the app</p>
             <span class="read-time">4 min read</span>
           </div>
         </div>
@@ -991,21 +984,21 @@
           <div class="step-num">1</div>
           <div class="step-body">
             <h4>Start with mindset</h4>
-            <p>Before you log a single calorie: adopt "consistently good, not perfect" - imperfect logs still count, and one off-meal changes nothing. Drop the "good/bad food" and "cheat day" language. Decide <strong>why</strong> you're tracking and for how long.</p>
+            <p>Before you log a single calorie: adopt "consistently good, not perfect": imperfect logs still count, and one off-meal changes nothing. Drop the "good/bad food" and "cheat day" language. Decide <strong>why</strong> you're tracking and for how long.</p>
           </div>
         </div>
         <div class="step">
           <div class="step-num">2</div>
           <div class="step-body">
             <h4>Fix the big execution errors (≈90% of the benefit)</h4>
-            <p><strong>Weigh raw, in grams, with a digital scale</strong> - this alone fixes the two largest errors. <strong>Log the "little stuff" that's actually big:</strong> oils, butter, dressings, sauces, drinks, alcohol. <strong>Vet your database entries</strong> once, then reuse; use the recipe builder for mixed meals. And don't sweat a 2-calorie spray while ignoring oils and weekends - that's backwards.</p>
+            <p><strong>Weigh raw, in grams, with a digital scale</strong>: this alone fixes the two largest errors. <strong>Log the "little stuff" that's actually big:</strong> oils, butter, dressings, sauces, drinks, alcohol. <strong>Vet your database entries</strong> once, then reuse; use the recipe builder for mixed meals. And don't sweat a 2-calorie spray while ignoring oils and weekends; that's backwards.</p>
           </div>
         </div>
         <div class="step">
           <div class="step-num">3</div>
           <div class="step-body">
             <h4>Handle the un-trackable and the long term</h4>
-            <p>For restaurants and travel: estimate, round up, move on. Watch the <strong>weekend pattern</strong> - the most common hidden reason for no progress. If the scale stalls for 2–3+ weeks, assume <strong>adherence drift</strong>, not "starvation mode": re-tighten weighing, re-check entries, and audit weekends <em>before</em> cutting calories further.</p>
+            <p>For restaurants and travel: estimate, round up, move on. Watch the <strong>weekend pattern</strong>: the most common hidden reason for no progress. If the scale stalls for 2–3+ weeks, assume <strong>adherence drift</strong>, not "starvation mode": re-tighten weighing, re-check entries, and audit weekends <em>before</em> cutting calories further.</p>
           </div>
         </div>
         <div class="step">
@@ -1018,15 +1011,14 @@
       </div>
 
       <div class="warning">
-        <span class="warning-label">⚠ When to change course entirely</span>
-        <p>If tracking is causing anxiety, social avoidance, guilt, or compulsive behavior - or you can't stop even when you want to - that's the threshold to stop tracking and seek support from your GP, a registered dietitian, or an eating-disorder specialist in your region. Better data is never worth a worse relationship with food.</p>
+        <span class="warning-label">When to change course entirely</span>
+        <p>If tracking is causing anxiety, social avoidance, guilt, or compulsive behavior, or you can't stop even when you want to, that's the threshold to stop tracking and seek support from your GP, a registered dietitian, or an eating-disorder specialist in your region. Better data is never worth a worse relationship with food.</p>
       </div>
     </section>
 
     <!-- KEY NUMBERS -->
     <section class="section" id="numbers" aria-label="Key Numbers">
       <div class="section-header">
-        <div class="section-icon">🔢</div>
         <div class="section-meta">
           <span class="section-eyebrow">Reference</span>
           <h2>Key Numbers</h2>
@@ -1039,7 +1031,7 @@
 
       <div class="numbers-grid">
         <div class="number-card"><div class="num">2×</div><div class="num-label">More weight lost with daily food records (Kaiser, 2008)</div></div>
-        <div class="number-card"><div class="num">20%</div><div class="num-label">Legal label tolerance - "200 cal" can be 240 (FDA)</div></div>
+        <div class="number-card"><div class="num">20%</div><div class="num-label">Legal label tolerance: "200 cal" can be 240 (FDA)</div></div>
         <div class="number-card"><div class="num">47%</div><div class="num-label">Average intake under-reporting (Lichtman, NEJM 1992)</div></div>
         <div class="number-card"><div class="num">25%</div><div class="num-label">Whole-almond calorie overestimate (USDA)</div></div>
         <div class="number-card"><div class="num">20–30%</div><div class="num-label">Protein's thermic effect (TEF)</div></div>
@@ -1052,7 +1044,6 @@
     <!-- CAVEATS -->
     <section class="section" id="caveats" aria-label="Caveats">
       <div class="section-header">
-        <div class="section-icon">⚠️</div>
         <div class="section-meta">
           <span class="section-eyebrow">Read This Too</span>
           <h2>Caveats</h2>
@@ -1066,7 +1057,7 @@
       <div class="highlight">
         <h4>Before you take any of this as gospel</h4>
         <ul>
-          <li><strong>Sourcing quality varies.</strong> The hard numbers (FDA's 20% tolerance; the Lichtman 1992 NEJM study; USDA almond research; Urban et al. restaurant testing; TEF ranges; the Kaiser daily-records finding) come from regulations and peer-reviewed studies. Many practical "how-to" points are best documented by coaches and app companies - directionally accurate and widely corroborated, but some app-company claims are commercially motivated.</li>
+          <li><strong>Sourcing quality varies.</strong> The hard numbers (FDA's 20% tolerance; the Lichtman 1992 NEJM study; USDA almond research; Urban et al. restaurant testing; TEF ranges; the Kaiser daily-records finding) come from regulations and peer-reviewed studies. Many practical "how-to" points are best documented by coaches and app companies: directionally accurate and widely corroborated, but some app-company claims are commercially motivated.</li>
           <li><strong>Individual variation is real.</strong> TEF, absorption, and metabolic adaptation differ person to person. The figures here are population averages, not personal guarantees.</li>
           <li><strong>"Off by 20%" is a legal maximum, not a typical error.</strong> Most labels are closer; the tolerance shows labels <em>can</em> be meaningfully off, not that they always are.</li>
           <li><strong>This is general education, not medical or psychological advice.</strong> Anyone with diabetes, a history of disordered eating, or other medical conditions should work with a qualified professional rather than relying on an app.</li>
@@ -1077,9 +1068,9 @@
       <div class="cta-block">
         <div class="cta-block-text">
           <h2>Want this dialed in for you?</h2>
-          <p>I coach everyday people and serious athletes through exactly this - building habits that hold up in real life, not just on paper. First consultation is free.</p>
+          <p>I coach everyday people and serious athletes through exactly this: building habits that hold up in real life, not just on paper. First consultation is free.</p>
         </div>
-        <a href="https://brusovcoach.org/#contact" class="cta-btn">Free Consultation →</a>
+        <a href="https://brusovcoach.org/#contact" class="cta-btn">Free Consultation</a>
       </div>
     </section>
 
@@ -1091,7 +1082,7 @@
   <div class="footer-inner">
     <div class="footer-brand">
       <h3>Food Tracking, Honestly</h3>
-      <p>Professional Coaching Knowledge Base - Online coaching worldwide | St. Louis, MO</p>
+      <p>Professional Coaching Knowledge Base. Online coaching worldwide | St. Louis, MO</p>
     </div>
     <div class="footer-links">
       <a href="https://brusovcoach.org">Training hub</a>
