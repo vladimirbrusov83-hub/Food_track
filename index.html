@@ -592,6 +592,12 @@
     .data-table { display: block; width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
     .data-table th, .data-table td { padding: 10px 12px; }
   }
+  @media (max-width: 960px) {
+    /* stick below the mobile header instead of sliding under it */
+    .filter-bar { top: 64px; }
+    .search-wrap { display: block; flex: 1; min-width: 0; }
+    .search-wrap input, .search-wrap input:focus { width: 100%; font-size: 16px; padding: 8px 14px 8px 34px; }
+  }
 </style>
 </head>
 <body>
